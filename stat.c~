@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <sys/stat.h>
+#include <time.h>
+
+void print_info(char *filename) {
+    struct stat buf;
+    stat(filename, &buf);
+    printf("Information for '%s':\n", filename);
+    printf("File size: %lu bytes\n", buf.st_size);
+    printf("Permissions: %o\n", buf.st_mode);
+    printf("Last accessed: %s", ctime((time_t *)&buf.st_atim));
+}
+
+int main() {
+    print_info("file");
+}
