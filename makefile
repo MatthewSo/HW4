@@ -1,4 +1,6 @@
-stats: stats.c
-	gcc stat.c
-run: stats
-	./a.out
+stat:stat.c
+        gcc -o stat stat.c
+run:stat
+        ./stat
+clean:
+        rm ~*
