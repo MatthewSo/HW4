@@ -1,4 +1,4 @@
 stats: stats.c
-	gcc stats.c
+	gcc stat.c
 run: stats
 	./a.out
