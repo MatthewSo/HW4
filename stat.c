@@ -17,7 +17,7 @@ int main() {
   printf("Time of last accessed: %s", ctime(&temp.st_atim));
   long m = temp.st_size;
   if (m < 1000){
-    printf( "Human Size: %f B\n", m);
+    printf( "Human Size: %d B\n", m);
   }
   else if (m < 1000000){
     printf( "Human Size: %f KB\n", m/1000.0);
