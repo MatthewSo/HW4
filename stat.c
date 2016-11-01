@@ -10,7 +10,7 @@ int main() {
 
   
   struct stat temp;
-  stat("file2.txt", &temp);
+  stat("file.txt", &temp);
   printf("Info for file.txt\n");
   printf("Size: %lu bytes\n", temp.st_size);
   printf("Permissions: %o\n", temp.st_mode);
@@ -29,47 +29,47 @@ int main() {
     printf( "Human Size: %f GB\n", m/1000000000.0);}
 
   printf("Human File Permissions: \t");
-  if (fileStat.st_mode & S_IRUSR) {
+  if (temp.st_mode & S_IRUSR) {
     printf("r");}
   else{
     printf("-");}
 
-  if (fileStat.st_mode & S_IWUSR) {
+  if (temp.st_mode & S_IWUSR) {
     printf("w");}
   else{
     printf("-");}
 
-  if (fileStat.st_mode & S_IXUSR) {
+  if (temp.st_mode & S_IXUSR) {
     printf("x");}
   else{
     printf("-");}
 
-      if (fileStat.st_mode & S_IRGRP) {
+      if (temp.st_mode & S_IRGRP) {
     printf("r");}
   else{
     printf("-");}
 
-  if (fileStat.st_mode & S_IWGRP) {
+  if (temp.st_mode & S_IWGRP) {
     printf("w");}
   else{
     printf("-");}
 
-  if (fileStat.st_mode & S_IXGRP){
+  if (temp.st_mode & S_IXGRP){
     printf("x");}
   else{
     printf("-");}
 
-      if (fileStat.st_mode & S_IROTH) {
+      if (temp.st_mode & S_IROTH) {
     printf("r");}
   else{
     printf("-");}
 
-      if  (fileStat.st_mode & S_IWOTH){
+      if  (temp.st_mode & S_IWOTH){
     printf("w");}
   else{
     printf("-");}
 
-  if (fileStat.st_mode & S_IXOTH) {
+  if (temp.st_mode & S_IXOTH) {
     printf("x");}
   else{
     printf("-");}
